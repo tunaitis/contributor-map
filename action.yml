@@ -1,0 +1,14 @@
+name: 'Contributor Map'
+description: 'Generate an SVG map showing countries with the most contributions to a repository'
+inputs:
+  repository:  # id of input
+    description: 'Name of the repository for which generate the contributor map'
+    required: true
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: docker://ghcr.io/tunaitis/contributor-map:dev
+  #args:
+   # - ${{ inputs.who-to-greet }}
