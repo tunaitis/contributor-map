@@ -1,0 +1,46 @@
+[
+  {
+    "key": "Bangalore",
+    "value": "Bengaluru"
+  },
+  {
+    "key": "Bay Area, CA",
+    "value": "California"
+  },
+  {
+    "key": "Bay Area, California",
+    "value": "California"
+  },
+  {
+    "key": "NYC",
+    "value": "New York City"
+  },
+  {
+    "key": "SF",
+    "value": "San Francisco"
+  },
+  {
+    "key": "SF Bay Area",
+    "value": "San Francisco"
+  },
+  {
+    "key": "San Francisco Bay Area",
+    "value": "San Francisco"
+  },
+  {
+    "key": "UK",
+    "value": "United Kingdom"
+  },
+  {
+    "key": "The Netherlands",
+    "value": "Netherlands"
+  },
+  {
+    "key": "DE",
+    "value": "Germany"
+  },
+  {
+    "key": "München",
+    "value": "Munich"
+  }
+]
