@@ -7,9 +7,11 @@ inputs:
   token:
     description: 'GitHub Token used to access the GitHub API'
     required: true
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  output:
+    description: 'Name of the generated map file'
+    required: false
+    default: 'contributor-map.svg'
+    
 runs:
   using: composite
   steps:
@@ -22,18 +24,9 @@ runs:
       with:
         repository: ${{ inputs.repository }}
         token: ${{ inputs.token }}
+        output: ${{ inputs.output }}
 
     - name: Commit the generated file back to the repository
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Automated Change
-        repository: .
-
-    - run: pwd
-      shell: bash
-
-    - run: ls -la
-      shell: bash
-
-  #args:
-   # - ${{ inputs.who-to-greet }}
