@@ -10,8 +10,28 @@ import (
 	"strings"
 )
 
+func readTemplate(name string) ([]byte, error) {
+	template, err := os.ReadFile(path.Join("template", name))
+	if err == nil {
+		return template, nil
+	}
+
+	// If the data file is not found, look for it in the folder where the process started.
+	e, err := os.Executable()
+	if err != nil {
+		return nil, err
+	}
+
+	template, err = os.ReadFile(path.Join(path.Dir(e), "template", name))
+	if err != nil {
+		return nil, err
+	}
+
+	return template, nil
+}
+
 func Map(locations map[string]int) ([]byte, error) {
-	mapTemplate, err := os.ReadFile(path.Join("template", "map.svg"))
+	template, err := readTemplate("map.svg")
 	if err != nil {
 		return nil, err
 	}
@@ -78,7 +98,7 @@ func Map(locations map[string]int) ([]byte, error) {
 	}
 	style.WriteString("</style>\n")
 
-	m := strings.Replace(string(mapTemplate),
+	m := strings.Replace(string(template),
 		"<!-- map_style -->",
 		style.String(), 1)
 
