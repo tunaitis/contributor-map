@@ -13,14 +13,19 @@ outputs:
 runs:
   using: composite
   steps:
+
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Generate Map
+    - name: Generate map
       uses: docker://ghcr.io/tunaitis/contributor-map:dev
       with:
         repository: ${{ inputs.repository }}
         token: ${{ inputs.token }}
+
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Automated Change
 
     - run: pwd
       shell: bash
