@@ -1,8 +1,11 @@
 name: 'Contributor Map'
 description: 'Generate an SVG map showing countries with the most contributions to a repository'
 inputs:
-  repository:  # id of input
+  repository:
     description: 'Name of the repository for which generate the contributor map'
+    required: true
+  token:
+    description: 'GitHub Token used to access the GitHub API'
     required: true
 outputs:
   time: # id of output
