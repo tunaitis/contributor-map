@@ -29,7 +29,7 @@ func getConfig() (*config, error) {
 		return nil, errors.New("repository name is not provided")
 	}
 
-	c.output = os.Getenv("OUTPUT")
+	c.output = os.Getenv("INPUT_OUTPUT")
 	if c.output == "" {
 		c.output = "render.svg"
 	}

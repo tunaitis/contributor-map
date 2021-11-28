@@ -11,7 +11,7 @@ inputs:
     description: 'Name of the generated map file'
     required: false
     default: 'contributor-map.svg'
-    
+
 runs:
   using: composite
   steps:

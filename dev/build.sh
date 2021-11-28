@@ -7,6 +7,6 @@ declare -a reps=("golang/go" "rails/rails" "ruby/ruby" "facebook/react" "Homebre
 
 for rep in "${reps[@]}"
 do
-  INPUT_CACHE=1 INPUT_REPOSITORY=$"$rep" OUTPUT=.out/${rep//\//-}.svg go run cmd/contributor-map/main.go
+  INPUT_CACHE=1 INPUT_REPOSITORY=$"$rep" INPUT_OUTPUT=.out/${rep//\//-}.svg go run cmd/contributor-map/main.go
   echo "<h4>${rep}</h4><img src=\"${rep//\//-}.svg\" />" >> .out/preview.html
 done
