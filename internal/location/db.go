@@ -2,8 +2,6 @@ package location
 
 import (
 	"encoding/json"
-	"fmt"
-	"log"
 	"os"
 	"path"
 	"strings"
@@ -174,8 +172,28 @@ func (db *Db) Search(query string) string {
 	return ""
 }
 
+func openFile(name string) (*os.File, error) {
+	file, err := os.Open(path.Join("data", name))
+	if err == nil {
+		return file, nil
+	}
+
+	// If the data file is not found, look for it in the folder where the process started.
+	e, err := os.Executable()
+	if err != nil {
+		return nil, err
+	}
+
+	file, err = os.Open(path.Join(path.Dir(e), "data", name))
+	if err != nil {
+		return nil, err
+	}
+
+	return file, nil
+}
+
 func (db *Db) loadCities() error {
-	file, err := os.Open(path.Join("data", "cities.json"))
+	file, err := openFile("cities.json")
 	if err != nil {
 		return err
 	}
@@ -190,7 +208,7 @@ func (db *Db) loadCities() error {
 }
 
 func (db *Db) loadRegions() error {
-	file, err := os.Open(path.Join("data", "states.json"))
+	file, err := openFile("states.json")
 	if err != nil {
 		return err
 	}
@@ -205,24 +223,7 @@ func (db *Db) loadRegions() error {
 }
 
 func (db *Db) loadCountries() error {
-
-	pwd, err := os.Getwd()
-	if err != nil {
-		return err
-	}
-	log.Printf("Listing files and folders: %s", pwd)
-	dirs, err := os.ReadDir("./")
-	if err != nil {
-		return err
-	}
-	for _, d := range dirs {
-		fmt.Printf("%s %t\n", d.Name(), d.IsDir())
-	}
-
-	file, err := os.Open(path.Join("data", "countries.json"))
-	if err != nil {
-		return err
-	}
+	file, err := openFile("countries.json")
 	defer file.Close()
 
 	err = json.NewDecoder(file).Decode(&db.countries)
@@ -234,7 +235,7 @@ func (db *Db) loadCountries() error {
 }
 
 func (db *Db) loadSynonyms() error {
-	file, err := os.Open(path.Join("data", "synonyms.json"))
+	file, err := openFile("synonyms.json")
 	if err != nil {
 		return err
 	}
