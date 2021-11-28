@@ -3,7 +3,8 @@ description: 'Generate an SVG map showing countries with the most contributions 
 inputs:
   repository:
     description: 'Name of the repository for which generate the contributor map'
-    required: true
+    required: false
+    default: ${{ github.repository }}
   token:
     description: 'GitHub Token used to access the GitHub API'
     required: true
