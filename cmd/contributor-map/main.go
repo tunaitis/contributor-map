@@ -43,7 +43,7 @@ func getConfig() (*config, error) {
 }
 
 func main() {
-	log.SetPrefix("contributor-render: ")
+	log.SetPrefix("contributor-map: ")
 	cfg, err := getConfig()
 	if err != nil {
 		log.Fatal(err)
