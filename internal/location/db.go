@@ -3,6 +3,7 @@ package location
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 	"path"
 	"strings"
@@ -205,6 +206,7 @@ func (db *Db) loadRegions() error {
 
 func (db *Db) loadCountries() error {
 
+	log.Println("Listing files and folders")
 	dirs, _ := os.ReadDir("./")
 	for _, d := range dirs {
 		fmt.Printf("%s %t\n", d.Name(), d.IsDir())
