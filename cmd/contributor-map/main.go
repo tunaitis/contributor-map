@@ -34,7 +34,7 @@ func getConfig() (*config, error) {
 		c.output = "render.svg"
 	}
 
-	c.accessToken = os.Getenv("GITHUB_TOKEN")
+	c.accessToken = os.Getenv("INPUT_GITHUB_TOKEN")
 	if c.accessToken == "" {
 		return nil, errors.New("GitHub access token is not provided")
 	}
