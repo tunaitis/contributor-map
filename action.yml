@@ -13,10 +13,20 @@ outputs:
 runs:
   using: composite
   steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
     - name: Generate Map
       uses: docker://ghcr.io/tunaitis/contributor-map:dev
       with:
         repository: ${{ inputs.repository }}
         token: ${{ inputs.token }}
+
+    - run: pwd
+      shell: bash
+
+    - run: ls -la
+      shell: bash
+
   #args:
    # - ${{ inputs.who-to-greet }}
