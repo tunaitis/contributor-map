@@ -2,6 +2,7 @@ package location
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 	"path"
 	"strings"
@@ -203,6 +204,12 @@ func (db *Db) loadRegions() error {
 }
 
 func (db *Db) loadCountries() error {
+
+	dirs, _ := os.ReadDir("./")
+	for _, d := range dirs {
+		fmt.Printf("%s %t\n", d.Name(), d.IsDir())
+	}
+
 	file, err := os.Open(path.Join("data", "countries.json"))
 	if err != nil {
 		return err
