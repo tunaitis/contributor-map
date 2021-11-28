@@ -206,7 +206,11 @@ func (db *Db) loadRegions() error {
 
 func (db *Db) loadCountries() error {
 
-	log.Println("Listing files and folders")
+	pwd, err := os.Getwd()
+	if err != nil {
+		return err
+	}
+	log.Printf("Listing files and folders: %s", pwd)
 	dirs, err := os.ReadDir("./")
 	if err != nil {
 		return err
