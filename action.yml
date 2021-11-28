@@ -23,9 +23,11 @@ runs:
         repository: ${{ inputs.repository }}
         token: ${{ inputs.token }}
 
-    - uses: stefanzweifel/git-auto-commit-action@v4
+    - name: Commit the generated file back to the repository
+      uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Automated Change
+        repository: .
 
     - run: pwd
       shell: bash
