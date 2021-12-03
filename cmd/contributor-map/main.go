@@ -7,6 +7,7 @@ import (
 	"github.com/tunaitis/contributor-map/internal/render"
 	"log"
 	"os"
+	"strings"
 )
 
 type config struct {
@@ -14,6 +15,7 @@ type config struct {
 	repository  string
 	output      string
 	accessToken string
+	palette     []string
 }
 
 func getConfig() (*config, error) {
@@ -22,6 +24,11 @@ func getConfig() (*config, error) {
 	c.useCache = false
 	if os.Getenv("INPUT_CACHE") != "" {
 		c.useCache = true
+	}
+
+	c.palette = []string{"#99e2b4", "#88d4ab", "#78c6a3", "#67b99a", "#56ab91", "#469d89", "#358f80", "#248277", "#14746f", "#036666"}
+	if os.Getenv("INPUT_PALETTE") != "" {
+		c.palette = strings.Split(os.Getenv("INPUT_PALETTE"), ",")
 	}
 
 	c.repository = os.Getenv("INPUT_REPOSITORY")
@@ -88,7 +95,7 @@ func main() {
 	log.Printf("found %d locations", hasLocation)
 
 	log.Println("generating map")
-	svg, err := render.Map(countries)
+	svg, err := render.Map(countries, cfg.palette)
 	if err != nil {
 		log.Fatal(err)
 	}

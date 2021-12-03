@@ -99,13 +99,13 @@ func classify(values []int, number int) map[int]fromTo {
 	return r
 }
 
-func Map(locations map[string]int) ([]byte, error) {
+func Map(locations map[string]int, palette []string) ([]byte, error) {
 	template, err := readTemplate("map.svg")
 	if err != nil {
 		return nil, err
 	}
 
-	palette := []string{"#99e2b4", "#88d4ab", "#78c6a3", "#67b99a", "#56ab91", "#469d89", "#358f80", "#248277", "#14746f", "#036666"}
+	//palette := []string{"#99e2b4", "#88d4ab", "#78c6a3", "#67b99a", "#56ab91", "#469d89", "#358f80", "#248277", "#14746f", "#036666"}
 
 	values := sortValues(locations)
 	values = makeUnique(values)
