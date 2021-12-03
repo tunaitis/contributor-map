@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"github.com/tunaitis/contributor-map/internal/github"
 	"github.com/tunaitis/contributor-map/internal/location"
 	"github.com/tunaitis/contributor-map/internal/render"
@@ -68,9 +69,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	x := contributors[0:20]
+
+	fmt.Println(x)
+
 	countries := map[string]int{}
 	hasLocation := 0
-	for _, c := range contributors {
+	for _, c := range x {
 		country := db.Search(c.Location)
 		if country == "" {
 			continue

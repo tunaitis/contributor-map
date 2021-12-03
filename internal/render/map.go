@@ -65,7 +65,7 @@ func Map(locations map[string]int) ([]byte, error) {
 	//palette := []string{"#d5e5ff", "#aaccff", "#80b3ff", "#5599ff", "#2a7fff", "#0066ff", "#0055d4", "#0044aa", "#003380"}
 	//palette := []string{"#e5d5ff", "#ccaaff", "#b380ff", "#9955ff", "#7f2aff", "#6600ff", "#5500d4", "#4400aa", "#330080", "#220055"}
 	//palette := []string{"#7a7a7a", "#8b7679", "#9b7076", "#a96973", "#b76171", "#c3596f", "#d04d6d", "#da416c", "#e62d6b", "#f0036a"}
-	palette := []string{"#4cc9f0", "#4895ef", "#4361ee", "#3f37c9", "#3a0ca3", "#480ca8", "#560bad", "#7209b7", "#b5179e", "#f72585"}
+	palette := []string{"#4cc9f0", "#4895ef", "#4361ee", "#3f37c9"}//, "#3a0ca3", "#480ca8", "#560bad", "#7209b7", "#b5179e", "#f72585"}
 	//palette := []string{"#184e77", "#1e6091", "#1a759f", "#168aad", "#34a0a4", "#52b69a", "#76c893", "#99d98c", "#b5e48c", "#d9ed92"}
 	//palette := []string{"#99e2b4", "#88d4ab", "#78c6a3", "#67b99a", "#56ab91", "#469d89", "#358f80", "#248277", "#14746f", "#036666"}
 	//palette := []string{"#80ffdb", "#72efdd", "#64dfdf", "#56cfe1", "#48bfe3", "#4ea8de", "#5390d9", "#5e60ce", "#6930c3", "#7400b8"}
