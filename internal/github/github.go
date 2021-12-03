@@ -9,9 +9,14 @@ import (
 )
 
 type contributor struct {
-	Login string
-	Location string
+	Login         string
+	Location      string
 	Contributions int
+}
+
+type githubErrorResponse struct {
+	Message          string `json:"message"`
+	DocumentationUrl string `json:"documentation_url"`
 }
 
 func GetContributors(accessToken string, name string, page int, useCache bool) ([]contributor, error) {
@@ -25,7 +30,12 @@ func GetContributors(accessToken string, name string, page int, useCache bool) (
 	var contributors []contributor
 	err = json.Unmarshal(resp, &contributors)
 	if err != nil {
-		return nil, errors.New(fmt.Sprintf("repository not found: %s", name))
+		var r githubErrorResponse
+		err = json.Unmarshal(resp, &r)
+		if err != nil {
+			return nil, err
+		}
+		return nil, errors.New(fmt.Sprintf("GitHub returned: %s", r.Message))
 	}
 
 	if len(contributors) == 100 {
