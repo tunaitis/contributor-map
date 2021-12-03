@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"fmt"
 	"github.com/tunaitis/contributor-map/internal/github"
 	"github.com/tunaitis/contributor-map/internal/location"
 	"github.com/tunaitis/contributor-map/internal/render"
@@ -11,9 +10,9 @@ import (
 )
 
 type config struct {
-	useCache bool
-	repository string
-	output string
+	useCache    bool
+	repository  string
+	output      string
 	accessToken string
 }
 
@@ -69,13 +68,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	x := contributors[0:20]
-
-	fmt.Println(x)
-
 	countries := map[string]int{}
 	hasLocation := 0
-	for _, c := range x {
+	for _, c := range contributors {
 		country := db.Search(c.Location)
 		if country == "" {
 			continue
