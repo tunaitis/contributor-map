@@ -1,5 +1,5 @@
 name: 'Contributor Map'
-description: 'Generate an SVG map showing countries with the most contributions to a repository'
+description: 'Generate an SVG map showing countries with the most contributions to the repository'
 inputs:
   repository:
     description: 'Name of the repository for which generate the contributor map'
@@ -12,6 +12,9 @@ inputs:
     description: 'Name of the generated map file'
     required: false
     default: 'contributor-map.svg'
+  palette:
+    description: 'A list of comma-separated hex triplets to customize the appearance of the map'
+    required: false
 
 runs:
   using: composite
