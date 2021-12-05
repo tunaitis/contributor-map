@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.1"
-   width="829.21448"
+   width="967.21448"
    viewBox="0 0 2751.3936 420.58542"
    id="svg9221"
-   height="420.58542"
+   height="490.58542"
    sodipodi:docname="map.svg"
    inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -207,57 +207,57 @@
 	.palette-color-5 { fill: #47A042 !important; }
 	.palette-color-6 { fill: #328533 !important; }
 	.palette-color-7 { fill: #1D6A23 !important; }
-	.ru { fill: #328533; }
-	.tr { fill: #328533; }
-	.kr { fill: #328533; }
-	.ca { fill: #328533; }
+	.cn { fill: #6AB356; }
+	.it { fill: #6AB356; }
+	.sg { fill: #6AB356; }
+	.nc { fill: #6AB356; }
+	.de { fill: #6AB356; }
+	.au { fill: #6AB356; }
+	.co { fill: #47A042; }
+	.es { fill: #47A042; }
+	.pl { fill: #47A042; }
+	.id { fill: #47A042; }
+	.br { fill: #47A042; }
+	.jp { fill: #47A042; }
 	.am { fill: #328533; }
 	.nl { fill: #328533; }
-	.gb { fill: #1D6A23; }
+	.ru { fill: #328533; }
+	.kr { fill: #328533; }
+	.ca { fill: #328533; }
+	.tr { fill: #328533; }
 	.in { fill: #1D6A23; }
 	.ie { fill: #1D6A23; }
+	.gb { fill: #1D6A23; }
 	.us { fill: #1D6A23; }
-	.mt { fill: #D9E887; }
 	.eg { fill: #D9E887; }
-	.ar { fill: #D9E887; }
-	.vn { fill: #D9E887; }
-	.mx { fill: #D9E887; }
-	.do { fill: #D9E887; }
 	.fr { fill: #D9E887; }
+	.hk { fill: #D9E887; }
+	.lk { fill: #D9E887; }
+	.by { fill: #D9E887; }
+	.mx { fill: #D9E887; }
+	.lt { fill: #D9E887; }
+	.vn { fill: #D9E887; }
+	.do { fill: #D9E887; }
 	.dz { fill: #D9E887; }
+	.mt { fill: #D9E887; }
+	.ar { fill: #D9E887; }
 	.cl { fill: #D9E887; }
 	.me { fill: #D9E887; }
-	.lt { fill: #D9E887; }
-	.lk { fill: #D9E887; }
-	.hk { fill: #D9E887; }
-	.by { fill: #D9E887; }
-	.za { fill: #B3D778; }
+	.ma { fill: #B3D778; }
+	.hu { fill: #B3D778; }
 	.mm { fill: #B3D778; }
 	.hr { fill: #B3D778; }
-	.ma { fill: #B3D778; }
 	.il { fill: #B3D778; }
-	.hu { fill: #B3D778; }
 	.no { fill: #B3D778; }
+	.za { fill: #B3D778; }
 	.at { fill: #B3D778; }
 	.gr { fill: #B3D778; }
-	.bd { fill: #8CC569; }
+	.pk { fill: #8CC569; }
 	.ph { fill: #8CC569; }
 	.be { fill: #8CC569; }
 	.ua { fill: #8CC569; }
+	.bd { fill: #8CC569; }
 	.pt { fill: #8CC569; }
-	.pk { fill: #8CC569; }
-	.nc { fill: #6AB356; }
-	.sg { fill: #6AB356; }
-	.cn { fill: #6AB356; }
-	.de { fill: #6AB356; }
-	.it { fill: #6AB356; }
-	.au { fill: #6AB356; }
-	.es { fill: #47A042; }
-	.co { fill: #47A042; }
-	.jp { fill: #47A042; }
-	.pl { fill: #47A042; }
-	.br { fill: #47A042; }
-	.id { fill: #47A042; }
 #legend7 { display: inline !important; }</style>
 
   <path
