@@ -115,6 +115,12 @@ func Map(locations map[string]int, palette []string) ([]byte, error) {
 		palette = palette[0:len(classes)]
 	}
 
+	if len(classes) > len(palette) {
+		to := classes[len(classes)-1].to
+		delete(classes, len(classes)-1)
+		classes[len(classes)-1] = fromTo{from: classes[len(classes)-1].from, to: to}
+	}
+
 	style := strings.Builder{}
 	style.WriteString("\n<style>\n")
 
