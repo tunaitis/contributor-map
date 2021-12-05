@@ -33,7 +33,10 @@ func getConfig() (*config, error) {
 
 	c.repository = os.Getenv("INPUT_REPOSITORY")
 	if c.repository == "" {
-		return nil, errors.New("repository name is not provided")
+		c.repository = os.Getenv("GITHUB_REPOSITORY")
+		if c.repository == "" {
+			return nil, errors.New("repository name is not provided")
+		}
 	}
 
 	c.output = os.Getenv("INPUT_OUTPUT")
