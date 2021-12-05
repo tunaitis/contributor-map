@@ -31,15 +31,6 @@ runs:
         output: ${{ inputs.output }}
         palette: ${{ inputs.palette }}
 
-    - name: Convert SVG to PNG
-      uses: alexrogalskiy/github-action-image-resizer@master
-      with:
-        sourceFile: ${{ inputs.output }}
-        targetPath: ./
-        targetFile: foo.png
-        width: 830
-        height: 454
-
     - name: Commit the generated file back to the repository
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
