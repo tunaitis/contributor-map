@@ -26,7 +26,7 @@ func getConfig() (*config, error) {
 		c.useCache = true
 	}
 
-	c.palette = []string{"#99e2b4", "#88d4ab", "#78c6a3", "#67b99a", "#56ab91", "#469d89", "#358f80", "#248277", "#14746f", "#036666"}
+	c.palette = []string{"#D9E887", "#B3D778", "#8CC569", "#6AB356", "#47A042", "#328533", "#1D6A23"}
 	if os.Getenv("INPUT_PALETTE") != "" {
 		c.palette = strings.Split(os.Getenv("INPUT_PALETTE"), ",")
 	}
