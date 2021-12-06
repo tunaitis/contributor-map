@@ -1,5 +1,8 @@
 name: 'Contributor Map'
 description: 'Generate an SVG map showing countries with the most contributions to the repository'
+branding:
+  icon: 'map'
+  color: 'green'
 inputs:
   repository:
     description: 'Name of the repository for which generate the contributor map'
