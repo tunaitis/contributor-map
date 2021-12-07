@@ -7,6 +7,7 @@ import (
 	"github.com/tunaitis/contributor-map/internal/render"
 	"log"
 	"os"
+	"path"
 	"strings"
 )
 
@@ -104,6 +105,11 @@ func main() {
 	}
 
 	log.Printf("writing map to file: %s", cfg.output)
+	err = os.MkdirAll(path.Dir(cfg.output), 0755)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	err = os.WriteFile(cfg.output, svg, 0644)
 	if err != nil {
 		log.Fatal(err)
