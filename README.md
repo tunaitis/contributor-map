@@ -2,6 +2,10 @@
 
 ![freeCodeCamp contributor map](docs/main.svg?1)
 
+<p align="center">
+  <sup>The image above generated using contributor data from freeCodeCamp/freeCodeCamp repository.</sup>
+</p>
+  
 ## Introduction
 
 Contributor Map is a GitHub action that automatically generates an SVG world map with countries colored according to the number of received code contributions. 
