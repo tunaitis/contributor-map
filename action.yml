@@ -24,7 +24,7 @@ runs:
       uses: actions/checkout@v2
 
     - name: Generate map
-      uses: docker://ghcr.io/tunaitis/contributor-map:dev
+      uses: docker://ghcr.io/tunaitis/contributor-map
       with:
         repository: ${{ inputs.repository }}
         token: ${{ github.token }}
