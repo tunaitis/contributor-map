@@ -1,6 +1,6 @@
 # Contributor Map Action
 
-![freeCodeCamp contributor map](docs/main.svg?1)
+![freeCodeCamp contributor map](docs/main.png)
 
 <p align="center">
   <sup>The image above generated using contributor data from freeCodeCamp/freeCodeCamp repository.</sup>
